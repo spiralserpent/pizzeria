@@ -9,6 +9,7 @@ import {Dish} from'../../shared/dish';
 import {Promotion} from'../../shared/promotion'; 
 import {Leader} from'../../shared/leader'; 
 
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -29,6 +30,8 @@ export class HomePage implements OnInit {
 
     }
 
+
+
     getFeaturedDish(){
       this.dishService //es una instancia del provider, el provider es dish provider
       .getFeaturedDish()
@@ -39,31 +42,12 @@ export class HomePage implements OnInit {
         }
       )
     }
-    getFeaturedLeader(){
-      this.leaderService
-      .getFeaturedLeader()
-      .subscribe(
-        response =>{
-          this.leader= response[0];
-        console.log(this.leader);
-        }
-      )
-    }
-    getFeaturedPromotion(){
-      this.promotionService
-      .getFeaturedPromotion()
-      .subscribe(
-        response =>{
-          this.promotion= response[0];
-        console.log(this.promotion);
-        }
-      )
-    }
+
  
   ngOnInit(){
   this.getFeaturedDish();
-  this.getFeaturedLeader();
-  this.getFeaturedPromotion();
+  //this.getFeaturedLeader();
+  //this.getFeaturedPromotion();
   }
 
 }
