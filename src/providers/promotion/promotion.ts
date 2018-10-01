@@ -18,7 +18,13 @@ export class PromotionProvider {
   }
 
   getPromotion(): Observable<Promotion[]>{
-    return this.http.get<Promotion[]>(dbURL + 'promotion').map(
+    return this.http.get<Promotion[]>(dbURL + 'promotions').map(
+      res => res
+    );
+  }
+
+  getFeaturedPromotion(): Observable<Promotion>{
+    return this.http.get<Promotion>(dbURL + 'promotions?featured=true').map(
       res => res
     );
   }

@@ -19,7 +19,8 @@
 	{{dish.description}}
 </p>
 		</ion-card-content>
-  </ion-card>
+	</ion-card>
+	
   <ion-card *ngIf="promotion">
 		<img src="{{dbURL + promotion.image}}" />
 		<ion-card-content>
@@ -30,7 +31,9 @@
 	{{promotion.description}}
 </p>
     </ion-card-content>
-  </ion-card>
+	</ion-card>
+	
+
   <ion-card *ngIf="leader">
 		<img src="{{dbURL + leader.image}}" />
 		<ion-card-content>
@@ -41,5 +44,6 @@
 	{{leader.description}}
 </p>
     </ion-card-content>
-  </ion-card>
+	</ion-card>
+	
 </ion-content>

@@ -16,13 +16,13 @@ export class LeaderProvider {
   constructor(public http: HttpClient) {
     console.log('Hello LeaderProvider Provider');
   }
-  getProvider(): Observable<Leader[]>{
-    return this.http.get<Leader[]>(dbURL + 'leader').map(
+  getLeader(): Observable<Leader[]>{
+    return this.http.get<Leader[]>(dbURL + 'leaders').map(
       res => res
     );
   }
-  getFeaturedDish(): Observable<Leader>{
-    return this.http.get<Leader[]>(dbURL + 'leader?featured=true').map(
+  getFeaturedLeader(): Observable<Leader>{
+    return this.http.get<Leader>(dbURL + 'leaders?featured=true').map(
       res => res
     );
   }

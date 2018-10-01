@@ -21,7 +21,8 @@
     <p> LLEVELE JOVEN
         AY DE TO2
       </p>
-    <ion-card *ngFor="let dish of dishes">
+    <ion-card *ngFor="let dish of dishes"
+    (click)="dishDetails($event, dish)">
         <img src="{{dbURL + dish.image}}" alt="{{dish.name}}"/>
         <ion-card-content>
           <ion-card-title>

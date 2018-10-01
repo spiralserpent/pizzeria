@@ -45,11 +45,32 @@ export class HomePage implements OnInit {
       )
     }
 
+    
+    getFeaturedPromotion(){
+      this.promotionService //es una instancia del provider, el provider es dish provider
+      .getFeaturedPromotion()
+      .subscribe(
+        response => {
+          this.dish=response[0];
+          console.log(this.promotion);//this.dish;
+        }
+      )
+    }
+    getFeaturedLeader(){
+      this.leaderService//es una instancia del provider, el provider es dish provider
+      .getFeaturedLeader()
+      .subscribe(
+        response => {
+          this.dish=response[0];
+          console.log(this.leader);//this.dish;
+        }
+      )
+    }
  
   ngOnInit(){
   this.getFeaturedDish();
-  //this.getFeaturedLeader();
-  //this.getFeaturedPromotion();
+  this.getFeaturedLeader();
+  this.getFeaturedPromotion();
   }
 
 }
