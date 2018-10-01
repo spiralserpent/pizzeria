@@ -17,6 +17,8 @@ import {Leader} from'../../shared/leader';
 export class HomePage implements OnInit {
 
   dish:Dish;
+  promotion:Promotion;
+  leader:Leader;
 
   constructor(  //nuestro constructor , en el estamos definiendo el dishService que es el dishProvider
     public navCtrl: NavController,
@@ -38,7 +40,7 @@ export class HomePage implements OnInit {
       .subscribe(
         response => {
           this.dish=response[0];
-          console.log(this.dish);
+          console.log('holis');//this.dish;
         }
       )
     }

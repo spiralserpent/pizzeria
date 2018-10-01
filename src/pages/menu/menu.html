@@ -16,9 +16,24 @@
 </ion-header>
 
 
-<ion-content padding>
-<p> LLEVELE JOVEN
-  AY DE TO2
-</p>
+
+<ion-content naranjita padding>
+    <p> LLEVELE JOVEN
+        AY DE TO2
+      </p>
+    <ion-card *ngFor="let dish of dishes">
+        <img src="{{dbURL + dish.image}}" alt="{{dish.name}}"/>
+        <ion-card-content>
+          <ion-card-title>
+            {{dish.name | uppercase}}
+          </ion-card-title>
+            <p>
+            {{dish.description}}
+           </p>
+        </ion-card-content>
+    </ion-card>
+
+
+
 
 </ion-content>
