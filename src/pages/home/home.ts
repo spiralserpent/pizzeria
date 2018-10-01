@@ -20,6 +20,8 @@ export class HomePage implements OnInit {
   constructor(  //nuestro constructor , en el estamos definiendo el dishService que es el dishProvider
     public navCtrl: NavController,
     private dishService: DishProvider,
+    private leaderService: LeaderProvider,
+    private promotionService: PromotionProvider,
     @Inject('DbURL') private dbURL
 
     ) 
@@ -37,9 +39,31 @@ export class HomePage implements OnInit {
         }
       )
     }
+    getFeaturedLeader(){
+      this.leaderService
+      .getFeaturedLeader()
+      .subscribe(
+        response =>{
+          this.leader= response[0];
+        console.log(this.leader);
+        }
+      )
+    }
+    getFeaturedPromotion(){
+      this.promotionService
+      .getFeaturedPromotion()
+      .subscribe(
+        response =>{
+          this.promotion= response[0];
+        console.log(this.promotion);
+        }
+      )
+    }
  
   ngOnInit(){
   this.getFeaturedDish();
+  this.getFeaturedLeader();
+  this.getFeaturedPromotion();
   }
 
 }
