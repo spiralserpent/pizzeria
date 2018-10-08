@@ -14,14 +14,14 @@
 
 
 <ion-content padding>
-    <ion-card *ngIf="promotion">
-        <img src="{{dbURL + promotion.image}}" />
+    <ion-card *ngIf="dish">
+        <img src="{{dbURL + dish.image}}" />
         <ion-card-content>
           <ion-card-title>
-            {{promotion.name | uppercase}}
+            {{dish.name | uppercase}}
           </ion-card-title>
           <p>
-            {{promotion.description}}
+            {{dish.description}}
           </p>
         </ion-card-content>
       </ion-card>

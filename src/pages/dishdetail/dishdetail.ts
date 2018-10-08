@@ -27,10 +27,24 @@ export class DishdetailPage implements OnInit{
     public navCtrl: NavController, 
     public navParams: NavParams,
     @Inject('DbURL') private dbURL
-     ) 
+     
+
+    ) 
      {
       this.dish = navParams.get('dish');
       this.numComments = this.dish.comments.length;
+      /* la media de los reslutados 
+      por cada platillo sumamos su rating 
+      despues el total lo dividimos entre el total 
+      y lo limitamos a uqe solo nuestre 2 decimales*/
+
+      let total = 0;
+      this.dish.comments.forEach(
+      comm => {
+      total += comm.rating
+    }
+  );
+  this.averageRat = (total/this.numComments).toFixed(2);
   }
  
 
@@ -41,12 +55,7 @@ export class DishdetailPage implements OnInit{
   ngOnInit(){
  
   }
+
   
-  let total = 0;
-  this.dish.comments.forEach(
-    comm => {
-    total += comm.rating
-    }
-  );
 }
 
