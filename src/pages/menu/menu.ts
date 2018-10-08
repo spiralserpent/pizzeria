@@ -23,7 +23,9 @@ export class MenuPage implements OnInit{
     public navCtrl: NavController, 
     public navParams: NavParams,
     private dishService: DishProvider,
+    @Inject('DbURL') private dbURL
     ) {
+      
   }
   getProviderDishes(){
     this.dishService 
@@ -41,7 +43,10 @@ export class MenuPage implements OnInit{
     this.navCtrl.push(DishdetailPage, {
       dish:dish
     });
+    
   }
+
+  
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');

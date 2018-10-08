@@ -14,5 +14,15 @@
 
 
 <ion-content padding>
-
+    <ion-card *ngIf="promotion">
+        <img src="{{dbURL + promotion.image}}" />
+        <ion-card-content>
+          <ion-card-title>
+            {{promotion.name | uppercase}}
+          </ion-card-title>
+          <p>
+            {{promotion.description}}
+          </p>
+        </ion-card-content>
+      </ion-card>
 </ion-content>

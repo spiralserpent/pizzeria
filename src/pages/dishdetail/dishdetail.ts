@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Dish} from'../../shared/dish'; 
-import {Comment} from'../../shared/dish'; 
+import {Comment} from'../../shared/comment'; 
 
 /**
  * Generated class for the DishdetailPage page.
@@ -20,17 +20,19 @@ export class DishdetailPage implements OnInit{
   dish:Dish;
   numComments:number;
   averageRat: string;
+  total: any;
   
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
+    @Inject('DbURL') private dbURL
      ) 
      {
       this.dish = navParams.get('dish');
-      this.numComments = this.dish.comment.length;
+      this.numComments = this.dish.comments.length;
   }
-
+ 
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DishdetailPage');
@@ -38,5 +40,13 @@ export class DishdetailPage implements OnInit{
 
   ngOnInit(){
  
+  }
+  
+  let total = 0;
+  this.dish.comments.forEach(
+    comm => {
+    total += comm.rating
     }
+  );
 }
+

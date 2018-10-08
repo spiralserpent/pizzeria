@@ -51,7 +51,7 @@ export class HomePage implements OnInit {
       .getFeaturedPromotion()
       .subscribe(
         response => {
-          this.dish=response[0];
+          this.promotion=response[0];
           console.log(this.promotion);//this.dish;
         }
       )
@@ -61,7 +61,7 @@ export class HomePage implements OnInit {
       .getFeaturedLeader()
       .subscribe(
         response => {
-          this.dish=response[0];
+          this.leader=response[0];
           console.log(this.leader);//this.dish;
         }
       )

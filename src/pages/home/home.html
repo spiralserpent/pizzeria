@@ -8,17 +8,19 @@
 </ion-header>
 
 <ion-content padding>
+
   <ion-card *ngIf="dish">
 		<img src="{{dbURL + dish.image}}" />
 
 		<ion-card-content>
 			<ion-card-title>
 				{{dish.name | uppercase}}
-</ion-card-title>
-<p>
-	{{dish.description}}
-</p>
+			</ion-card-title>
+			<p>
+				{{dish.description}}
+			</p>
 		</ion-card-content>
+
 	</ion-card>
 	
   <ion-card *ngIf="promotion">
@@ -26,10 +28,10 @@
 		<ion-card-content>
 			<ion-card-title>
 				{{promotion.name | uppercase}}
-</ion-card-title>
-<p>
-	{{promotion.description}}
-</p>
+			</ion-card-title>
+			<p>
+				{{promotion.description}}
+			</p>
     </ion-card-content>
 	</ion-card>
 	
@@ -39,10 +41,10 @@
 		<ion-card-content>
 			<ion-card-title>
 				{{leader.name | uppercase}}
-</ion-card-title>
-<p>
-	{{leader.description}}
-</p>
+			</ion-card-title>
+			<p>
+				{{leader.description}}
+			</p>
     </ion-card-content>
 	</ion-card>
 	
