@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-    <ion-navbar color="aguamarina">
+    <ion-navbar color="naranjita">
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
@@ -16,9 +16,37 @@
   </ion-header>
   
   
-  <ion-content padding>
-  <p> SOMOS BIEN CHIDOS Y ASEMOS PISSA
-  </p>
+  <ion-content class="fondo" color="moradito" background-color="moradito" padding>
+
+
+  <ion-card color="moradito" background-color="moradito">
+    <ion-card-content >
+      <ion-card-title>
+        Out Story
+      </ion-card-title>
+        <p>
+          HACEMOS PICSA
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus veniam velit ab ratione, voluptate necessitatibus aspernatur facilis asperiores soluta dolore praesentium magni obcaecati quos reiciendis, amet suscipit nemo quo. Excepturi.
+       </p>
+    </ion-card-content>
+</ion-card>
   
-  </ion-content>
+<ion-content class="nofondo">
   
+    <ion-card-title class="texto">Nuestro equipo</ion-card-title>
+<ion-card-content class="transparente">
+   <ion-card color="moradito" background-color="moradito" *ngFor="let leader of leaders"
+(click)="getLeaderDetails($event, leader)">
+      <img src="{{dbURL + leader.image}}" alt="{{leader.name}}"/>
+      <ion-card-content>
+        <ion-card-title>
+          {{leader.name | uppercase}}
+        </ion-card-title>
+          <p>
+          {{leader.description}}
+         </p>
+      </ion-card-content>
+  </ion-card>
+</ion-card-content>
+
+</ion-content>
