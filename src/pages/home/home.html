@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="naranjita">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -7,9 +7,9 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding moradito color="moradito">
 
-  <ion-card *ngIf="dish">
+  <ion-card *ngIf="dish" color="moradito" background-color="moradito">
 		<img src="{{dbURL + dish.image}}" />
 
 		<ion-card-content>
@@ -22,8 +22,8 @@
 		</ion-card-content>
 
 	</ion-card>
-	
-  <ion-card *ngIf="promotion">
+
+  <ion-card *ngIf="promotion" color="moradito" background-color="moradito">
 		<img src="{{dbURL + promotion.image}}" />
 		<ion-card-content>
 			<ion-card-title>
@@ -36,7 +36,7 @@
 	</ion-card>
 	
 
-  <ion-card *ngIf="leader">
+  <ion-card *ngIf="leader" color="moradito" background-color="moradito">
 		<img src="{{dbURL + leader.image}}" />
 		<ion-card-content>
 			<ion-card-title>

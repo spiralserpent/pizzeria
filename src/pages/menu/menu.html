@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar color="favorite">
+  <ion-navbar color="naranjita">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -17,11 +17,9 @@
 
 
 
-<ion-content naranjita padding>
-    <p> LLEVELE JOVEN
-        AY DE TO2
-      </p>
-    <ion-card *ngFor="let dish of dishes"
+<ion-content color="moradito"  padding>
+  
+    <ion-card color="moradito" background-color="moradito" *ngFor="let dish of dishes"
     (click)="getDishDetails($event, dish)">
         <img src="{{dbURL + dish.image}}" alt="{{dish.name}}"/>
         <ion-card-content>
