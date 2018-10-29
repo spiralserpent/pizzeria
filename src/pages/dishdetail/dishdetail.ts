@@ -22,14 +22,15 @@ export class DishdetailPage implements OnInit{
   numComments:number;
   averageRat: string;
   total: any;
-  
+  favorite: boolean = false;
+
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
+    private favoriteService: FavoriteProvider,
     @Inject('DbURL') private dbURL
      
-
     ) 
      {
       this.dish = navParams.get('dish');
@@ -43,6 +44,9 @@ export class DishdetailPage implements OnInit{
       this.dish.comments.forEach(
       comm => {
       total += comm.rating
+
+      this.favorite = this.favoriteService.isFavorite(this.dish.id);
+      //esto es para ver si es favorito o no  
     }
   );
   this.averageRat = (total/this.numComments).toFixed(2);
@@ -51,6 +55,11 @@ export class DishdetailPage implements OnInit{
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DishdetailPage');
+  }
+
+  addToFavorites(){
+    this.favoriteService.addToFavorites(this.dish.id);
+    this.favorite = this.favoriteService.isFavorite(this.dish.id);
   }
 
   ngOnInit(){
