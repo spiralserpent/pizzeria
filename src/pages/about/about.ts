@@ -16,24 +16,11 @@ import {Leader} from'../../shared/leader';
 })
 export class AboutPage implements OnInit{
 
-<<<<<<< HEAD
 
   leaders: Leader[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private leaderService: LeaderProvider, @Inject('DbURL') private dbURL) {
-=======
-
-  leaders:Leader[];
-
-  constructor(
-    public navCtrl: NavController, 
-    public navParams: NavParams,
-    private leaderService: LeaderProvider,
-    @Inject('DbURL') private dbURL
-    ) {
-      
->>>>>>> d3738a6fd79a45b7133279fdb4dc00d8efeeaa51
   }
   getProviderLeader(){
     this.leaderService 
@@ -67,10 +54,6 @@ export class AboutPage implements OnInit{
   }
 
   ngOnInit(){
-<<<<<<< HEAD
     this.getProviderLeaders();
-=======
-    this.getProviderLeader();
->>>>>>> d3738a6fd79a45b7133279fdb4dc00d8efeeaa51
     }
 }
