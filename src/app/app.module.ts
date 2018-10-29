@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AboutPage} from '../pages/about/about';
 import { MenuPage } from '../pages/menu/menu';
+import { FavoritesPage } from '../pages/favorites/favorites';
 import { ContactPage} from '../pages/contact/contact';
 import { DishdetailPage} from '../pages/dishdetail/dishdetail';
 
@@ -25,6 +26,7 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     HomePage,
     MenuPage,
     AboutPage,
+    FavoritesPage,
     DishdetailPage,
     ContactPage
   ],
@@ -39,6 +41,7 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     HomePage,
     MenuPage,
     AboutPage,
+    FavoritesPage,
     DishdetailPage,
     ContactPage
   ],
